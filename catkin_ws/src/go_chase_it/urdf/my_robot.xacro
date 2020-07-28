@@ -96,7 +96,7 @@
 
   </link>
 
- <link name= 'right_wheel'>
+  <link name= 'right_wheel'>
 
     <visual>
       <origin xyz="-0.0 0 0" rpy=" 0 1.5707 1.5707"/>
@@ -124,6 +124,76 @@
 
   </link>
 
+  <link name='camera'>
+  
+    <visual>
+      <origin xyz="-0.0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </visual>
+  
+     <collision>
+      <origin xyz="-0.0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+    
+  </link>
+
+<link name='hokuyo'>
+  
+    <visual>
+      <origin xyz="-0.0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <mesh filename="package://go_chase_it/meshes/hokuyo.dae"/>
+      </geometry> 
+    </visual>
+  
+    <collision>
+      <origin xyz="-0.0 0 0" rpy=" 0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="1e-5"/>
+      <origin xyz="0.0 0 0" rpy=" 0 0 0"/>
+      <inertia
+          ixx="1e-6" ixy="0" ixz="0"
+          iyy="1e-6" iyz="0"
+          izz="1e-6"
+      />
+    </inertial>
+    
+  </link>
+
+  <joint type="fixed" name="camera_joint">
+    <origin xyz="0.2 0 0" rpy="0 0 0"/>
+    <child link="camera"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint type="fixed" name="hokuyo">
+    <origin xyz="0.15 0 0.1" rpy="0 0 0"/>
+    <child link="hokuyo"/>
+    <parent link="chassis"/>
+    <axis xyz="0 1 0" rpy="0 0 0"/>
+  </joint>
+
   <joint type="continuous" name="left_wheel_hinge">
     <origin xyz="0 0.15 0" rpy="0 0 0"/>
     <child link="left_wheel"/>
@@ -131,9 +201,9 @@
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
-  </joint>`
+  </joint>
 
-    <joint type="continuous" name="righ_wheel_hinge">
+  <joint type="continuous" name="righ_wheel_hinge">
     <origin xyz="0 -0.15 0" rpy="0 0 0"/>
     <child link="right_wheel"/>
     <parent link="chassis"/>
