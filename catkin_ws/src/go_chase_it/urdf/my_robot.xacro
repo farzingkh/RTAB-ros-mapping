@@ -61,7 +61,7 @@
     </collision>
 
     <visual name='front_caster_visual'>
-      <origin xyz="0.15 0 -0.5" rpy=" 0 1.5707 1.5707"/>
+      <origin xyz="0.15 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
@@ -204,7 +204,7 @@
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
 
-  <joint type="continuous" name="righ_wheel_hinge">
+  <joint type="continuous" name="right_wheel_hinge">
     <origin xyz="0 -0.15 0" rpy="0 0 0"/>
     <child link="right_wheel"/>
     <parent link="chassis"/>
