@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <robot>
 
+  <!-- 
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
       <legacyMode>false</legacyMode>
@@ -24,8 +25,30 @@
       <publishTf>1</publishTf>
       <publishOdomTF>true</publishOdomTF>
     </plugin>
-  </gazebo>
+  </gazebo> -->
 
+  <!-- Skid Steer Plugin-->
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/$(arg nsp)</robotNamespace>
+      <robotBaseFrame>chassis</robotBaseFrame>
+      <leftFrontJoint>front_left_wheel_hinge</leftFrontJoint>
+      <rightFrontJoint>front_right_wheel_hinge</rightFrontJoint>
+      <leftRearJoint>back_left_wheel_hinge</leftRearJoint>
+      <rightRearJoint>back_right_wheel_hinge</rightRearJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.2</wheelDiameter>
+      <torque>5</torque>
+      <broadcastTF>true</broadcastTF>
+      <commandTopic>cmd_vel</commandTopic>
+      <odometryTopic>odom</odometryTopic>
+      <odometryFrame>odom</odometryFrame>
+      <odometrySource>world</odometrySource>
+      <publishTf>1</publishTf>
+      <publishOdomTF>true</publishOdomTF>
+    </plugin>
+  </gazebo>
   <!-- camera -->
   <gazebo reference="camera">
     <sensor type="camera" name="camera1">
