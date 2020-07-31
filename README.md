@@ -40,16 +40,19 @@ ROS simulation of a four wheeled mobile robot with skid steer control following 
 ```sh
 $ git clone https://github.com/farzingkh/ChaseIt.git
 $ cd ChaseIt/catkin_ws
-$ source deve/setup.bahs
+$ source devel/setup.bahs
 $ catkin_make
 ```
 
-#### Step 3 Run the simulation o
+#### Step 3 Run the robot simulation 
 ```sh
 $ roslaunch go_chase_it world.launch
-$ roslaunch ball_chaser world.launch
 ```
 
+#### Step 4 Run the processing and command nodes
+```sh
+$ roslaunch ball_chaser world.launch
+```
 ## Output
 
 ![alt text](image/out.gif)
