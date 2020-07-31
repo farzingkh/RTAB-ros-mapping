@@ -36,23 +36,17 @@ ROS simulation of a differential drive mobile robot following a ballusing camera
 
 ### Steps to launch the simulation
 
-#### Step 1 Source the setup
+#### Step 1 clone the repository and build it
 ```sh
-$ cd catkin_ws
+$ git clone https://github.com/farzingkh/ChaseIt.git
+$ cd ChaseIt/catkin_ws
 $ source deve/setup.bahs
-```
-#### Step 2 Build the code using catkin make
-```sh
 $ catkin_make
 ```
 
-#### Step 3 Run the simulation of the robot using roslaunch from go_chase_it package
+#### Step 3 Run the simulation o
 ```sh
 $ roslaunch go_chase_it world.launch
-```
-
-#### Step 4 Run the command_bot service and process_image node from ball_chaser package
-```sh
 $ roslaunch ball_chaser world.launch
 ```
 
