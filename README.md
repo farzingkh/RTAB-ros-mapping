@@ -1,5 +1,5 @@
 # ChaseIt
-ROS simulation of a differential drive mobile robot following a ballusing camera 
+ROS simulation of a four wheeled mobile robot with skid steer control following a ball using a camera 
 
 ### Directory Structure
 <pre><font color="#3465A4"><b>.</b></font>
