@@ -22,13 +22,13 @@
 		<collision name="collision">
 			<origin xyz="0 0 0" rpy=" 0 0 0" />
 			<geometry>
-				<box size=".8 .2 .1" />
+				<box size=".8 .5 .1" />
 			</geometry>
 		</collision>
 		<visual name="chassis_visual">
 			<origin xyz="0 0 0" rpy=" 0 0 0" />
 			<geometry>
-				<box size=".8 .2 .1" />
+				<box size=".8 .5 .1" />
 			</geometry>
 		</visual>
 	</link>
@@ -40,25 +40,25 @@
 	<!-- Right Front Wheel -->
 	<link name="front_right_wheel">
 		<visual>
-			<origin xyz="0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</visual>
 		<collision>
-			<origin xyz="0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</collision>
 		<inertial>
 			<mass value="5.0" />
-			<origin xyz="0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
 		</inertial>
 	</link>
 	<joint type="continuous" name="front_right_wheel_hinge">
-		<origin xyz="0.35 -0.15 0" rpy="0 0 0" />
+		<origin xyz="0.2 -0.3 0" rpy="0 0 0" />
 		<child link="front_right_wheel" />
 		<parent link="chassis" />
 		<axis xyz="0 1 0" rpy="0 0 0" />
@@ -67,31 +67,31 @@
 	</joint>
 	<gazebo reference="front_right_wheel">
 		<material>
-			Gazebo/Green
+			Gazebo/Blue
 		</material>
 	</gazebo>
 	<!-- Left Front Wheel -->
 	<link name="front_left_wheel">
 		<visual>
-			<origin xyz="0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</visual>
 		<collision>
-			<origin xyz="0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</collision>
 		<inertial>
 			<mass value="5.0" />
-			<origin xyz="0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="0 0 0" rpy=" 0 1.5707 1.5707" />
 			<inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
 		</inertial>
 	</link>
 	<joint type="continuous" name="front_left_wheel_hinge">
-		<origin xyz="0.35 0.15 0" rpy="0 0 0" />
+		<origin xyz="0.2 0.3 0" rpy="0 0 0" />
 		<child link="front_left_wheel" />
 		<parent link="chassis" />
 		<axis xyz="0 1 0" rpy="0 0 0" />
@@ -100,31 +100,31 @@
 	</joint>
 	<gazebo reference="front_left_wheel">
 		<material>
-			Gazebo/Green
+			Gazebo/Blue
 		</material>
 	</gazebo>
 	<!-- Back Left Wheel -->
 	<link name="back_left_wheel">
 		<visual>
-			<origin xyz="-0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="-0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</visual>
 		<collision>
-			<origin xyz="-0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="-0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</collision>
 		<inertial>
 			<mass value="5.0" />
-			<origin xyz="-0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="-0 0 0" rpy=" 0 1.5707 1.5707" />
 			<inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
 		</inertial>
 	</link>
 	<joint type="continuous" name="back_left_wheel_hinge">
-		<origin xyz="-0.35 0.15 0" rpy="0 0 0" />
+		<origin xyz="-0.2 0.3 0" rpy="0 0 0" />
 		<child link="back_left_wheel" />
 		<parent link="chassis" />
 		<axis xyz="0 1 0" rpy="0 0 0" />
@@ -133,31 +133,31 @@
 	</joint>
 	<gazebo reference="back_left_wheel">
 		<material>
-			Gazebo/Green
+			Gazebo/Blue
 		</material>
 	</gazebo>
 	<!-- Back Right Wheel -->
 	<link name="back_right_wheel">
 		<visual>
-			<origin xyz="-0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="-0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</visual>
 		<collision>
-			<origin xyz="-0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="-0 0 0" rpy=" 0 1.5707 1.5707" />
 			<geometry>
 				<cylinder radius="0.1" length="0.05" />
 			</geometry>
 		</collision>
 		<inertial>
 			<mass value="5.0" />
-			<origin xyz="-0.35 0 0" rpy=" 0 1.5707 1.5707" />
+			<origin xyz="-0 0 0" rpy=" 0 1.5707 1.5707" />
 			<inertia ixx="0.1" ixy="0" ixz="0" iyy="0.1" iyz="0" izz="0.1" />
 		</inertial>
 	</link>
 	<joint type="continuous" name="back_right_wheel_hinge">
-		<origin xyz="-0.35 -0.15 0" rpy="0 0 0" />
+		<origin xyz="-0.2 -0.3 0" rpy="0 0 0" />
 		<child link="back_right_wheel" />
 		<parent link="chassis" />
 		<axis xyz="0 1 0" rpy="0 0 0" />
@@ -166,7 +166,7 @@
 	</joint>
 	<gazebo reference="back_right_wheel">
 		<material>
-			Gazebo/Green
+			Gazebo/Blue
 		</material>
 	</gazebo>
 	<!-- Camera -->
