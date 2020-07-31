@@ -97,16 +97,16 @@ public:
         switch (dir)
         {
         case direction::right:
-            drive_robot(0.1, -0.1);
+            drive_robot(0.2, -0.5);
             break;
         case direction::left:
-            drive_robot(0.1, 0.1);
+            drive_robot(0.2, 0.5);
             break;
         case direction::forward:
-            drive_robot(0.1, 0);
+            drive_robot(0.2, 0);
             break;
         case direction::backward:
-            drive_robot(-0.1, 0);
+            drive_robot(-0.2, 0);
             break;
         case direction::stop:
             drive_robot(0, 0);
