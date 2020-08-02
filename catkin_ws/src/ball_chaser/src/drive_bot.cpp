@@ -16,7 +16,7 @@ public:
         // inform ROS of what commands will be published by publisher
         motor_command_publisher__ = n__.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
         // create a service called command_bot service with handle_drive call back
-        service__ = n__.advertiseService("/ball_chaser/command_bot", handle_drive);
+        service__ = n__.advertiseService("/ball_chaser/command_bot", &DriveBot::handle_drive, this);
 
         ROS_INFO("Ready to send velocity commands");
     }
