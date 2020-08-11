@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <robot name="my_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-	<include filename="$(find go_chase_it)/urdf/my_robot.gazebo" />
+	<include filename="$(find robot)/urdf/my_robot.gazebo" />
 	<!--  Footprint -->
 	<link name="robot_footprint">
 	</link>
@@ -205,7 +205,7 @@
 		<visual>
 			<origin xyz="-0.0 0 0" rpy=" 0 0 0" />
 			<geometry>
-				<mesh filename="package://go_chase_it/meshes/hokuyo.dae" />
+				<mesh filename="package://robot/meshes/hokuyo.dae" />
 			</geometry>
 		</visual>
 		<collision>
