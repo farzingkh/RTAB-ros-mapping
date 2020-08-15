@@ -12,6 +12,18 @@
         <param name="initial_pose_x" value="-2.1"/>
         <param name="initial_pose_y" value="1.1"/>
         <param name="initial_pose_a" value="-1.57"/>
+        <!-- filter params -->
+        <param name="min_particles" value="100"/>
+        <param name="max_particles" value="5000"/>
+        <param name="update_min_d" value="0.05"/>
+        <param name="update_min_a" value="0.02"/>
+        
+        <!-- laser model params  -->
+        <param name="laser_model_type" value="likelihood_field"/>
+        <param name="laser_likelihood_max_dist" value="3.0"/>
+        <param name="laser_z_hit" value="0.95"/>
+        <param name="laser_z_rand" value="0.05"/>
+        <param name="laser_max_beams" value="50"/>
     </node>
     <!-- move_base -->
     <node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
