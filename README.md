@@ -1,5 +1,5 @@
-# ChaseIt
-ROS simulation of a four wheeled mobile robot with skid steer control following a ball using a camera 
+# AMCL Localization
+This repo contains localization of a four wheeled mobile robot inside an office using ROS amcl localization package
 
 ### Directory Structure
 <pre><font color="#3465A4"><b>.</b></font>
@@ -38,20 +38,21 @@ ROS simulation of a four wheeled mobile robot with skid steer control following 
 
 #### Step 1 clone the repository and build it
 ```sh
-$ git clone https://github.com/farzingkh/ChaseIt.git
-$ cd ChaseIt/catkin_ws
-$ source devel/setup.bahs
+$ git clone https://github.com/farzingkh/AMCL-Localization.git
+$ cd AMCL_localization/catkin_ws
 $ catkin_make
+$ source devel/setup.bash
 ```
 
 #### Step 3 Run the robot simulation 
 ```sh
-$ roslaunch go_chase_it world.launch
+$ roslaunch robot world.launch
 ```
 
 #### Step 4 Run the processing and command nodes
 ```sh
-$ roslaunch ball_chaser world.launch
+$ roslaunch amcl_localization amcl.launch
+$ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 ## Output
 
