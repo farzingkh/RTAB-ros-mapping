@@ -1,5 +1,5 @@
-# AMCL Localization
-This repo contains localization of a four wheeled mobile robot inside an office using ROS amcl localization package
+# RTAB ROS Mapping
+This repo contains application of rtabmap_ros package to map a gazebo environment using Kinect
 
 ### Directory Structure
 <pre><font color="#3465A4"><b>.</b></font>
