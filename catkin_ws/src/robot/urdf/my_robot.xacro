@@ -172,7 +172,32 @@
 	<!-- Camera -->
 	<link name="camera">
 		<visual>
+			<origin xyz="-0.0 0 0.0" rpy=" 0 0 0" />
+			<geometry>
+				<box size="0.05 0.05 0.05" />
+			</geometry>
+		</visual>
+		<collision>
 			<origin xyz="-0.0 0 0" rpy=" 0 0 0" />
+			<geometry>
+				<box size="0.05 0.05 0.05" />
+			</geometry>
+		</collision>
+		<inertial>
+			<mass value="0.1" />
+			<origin xyz="0.0 0 0" rpy=" 0 0 0" />
+			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+		</inertial>
+	</link>
+	<joint type="fixed" name="camera_joint">
+		<origin xyz="0.4 0 0.0" rpy="0 0 0" />
+		<child link="camera" />
+		<parent link="chassis" />
+	</joint>
+	<!-- RGBD Camera -->
+	<link name="RGBD_camera">
+		<visual>
+			<origin xyz="-0.0 0 0.05" rpy="0 -1.5707 1.5707" />
 			<geometry>
 				<mesh filename="package://robot/meshes/kinect.dae" />
 			</geometry>
@@ -189,11 +214,10 @@
 			<inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
 		</inertial>
 	</link>
-	<joint type="fixed" name="camera_joint">
-		<origin xyz="0.4 0 0" rpy="0 0 0" />
-		<child link="camera" />
-		<parent link="chassis" />
-		<axis xyz="0 1 0" rpy="0 0 0" />
+	<joint type="fixed" name="RGBD_camera_joint">
+		<origin xyz="0.0 0 0.0" rpy="-1.5707 0 -1.5707" />
+		<child link="RGBD_camera" />
+		<parent link="camera" />
 	</joint>
 	<!-- LIDAR -->
 	<link name="hokuyo">
