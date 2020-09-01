@@ -2,7 +2,7 @@
 
 <launch>
   <!-- Arguments for launch file with defaults provided -->
-  <arg name="database_path"     default="rtabmap.db"/>
+  <arg name="database_path"     default="/root/.ros/rtabmap.db"/>
   <arg name="rgb_topic"   default="/camera/rgb/image_raw"/>
   <arg name="depth_topic" default="/camera/depth/image_raw"/>
   <arg name="camera_info_topic" default="/camera/rgb/camera_info"/>  
@@ -53,6 +53,7 @@
 
       <!-- Set to false to avoid saving data when robot is not moving -->
       <param name="Mem/NotLinkedNodesKept" type="string" value="false"/>
+      <param name="Grid/FromDepth" type="string" value="false"/>
     </node>
 
     <!-- visualization with rtabmapviz -->
@@ -66,5 +67,6 @@
         <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
         <remap from="scan"            to="/scan"/>
     </node>
+
   </group>
 </launch>
