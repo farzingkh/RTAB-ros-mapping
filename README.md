@@ -16,7 +16,6 @@ This repo contains application of rtabmap_ros package to map a gazebo environmen
 │       │   ├── <font color="#3465A4"><b>launch</b></font>
 │       │   │   └── amcl.launch
 │       │   ├── <font color="#3465A4"><b>maps</b></font>
-│       │   │   ├── <font color="#75507B"><b>map.pgm</b></font>
 │       │   │   └── map.yaml
 │       │   └── package.xml
 │       ├── <span style="background-color:#2E3436"><font color="#CC0000"><b>CMakeLists.txt</b></font></span> -&gt; /opt/ros/kinetic/share/catkin/cmake/toplevel.cmake
@@ -26,7 +25,6 @@ This repo contains application of rtabmap_ros package to map a gazebo environmen
 │       │   │   └── request_publisher.launch
 │       │   ├── LICENSE
 │       │   ├── <font color="#3465A4"><b>maps</b></font>
-│       │   │   └── <font color="#75507B"><b>map.pgm</b></font>
 │       │   ├── <font color="#3465A4"><b>msgs</b></font>
 │       │   │   ├── CMakeLists.txt
 │       │   │   └── collision_map_request.proto
@@ -42,8 +40,11 @@ This repo contains application of rtabmap_ros package to map a gazebo environmen
 │       │   ├── <font color="#3465A4"><b>launch</b></font>
 │       │   │   ├── robot_description.launch
 │       │   │   └── world.launch
+│       │   ├── <font color="#3465A4"><b>material</b></font>
+│       │   │   └── <font color="#75507B"><b>kinect.jpg</b></font>
 │       │   ├── <font color="#3465A4"><b>meshes</b></font>
-│       │   │   └── hokuyo.dae
+│       │   │   ├── hokuyo.dae
+│       │   │   └── kinect.dae
 │       │   ├── package.xml
 │       │   ├── <font color="#3465A4"><b>rviz</b></font>
 │       │   │   └── RViz.rviz
@@ -52,7 +53,76 @@ This repo contains application of rtabmap_ros package to map a gazebo environmen
 │       │   │   └── my_robot.xacro
 │       │   └── <font color="#3465A4"><b>world</b></font>
 │       │       ├── empty.world
+│       │       ├── office1.world
 │       │       └── office.world
+│       ├── <font color="#3465A4"><b>rtabmap_ros</b></font>
+│       │   ├── <font color="#3465A4"><b>cfg</b></font>
+│       │   │   └── <font color="#4E9A06"><b>Camera.cfg</b></font>
+│       │   ├── CMakeLists.txt
+│       │   ├── costmap_plugins.xml
+│       │   ├── <font color="#3465A4"><b>database</b></font>
+│       │   │   └── rtabmap.db
+│       │   ├── <font color="#3465A4"><b>docker</b></font>
+│       │   │   ├── <font color="#3465A4"><b>indigo</b></font>
+│       │   │   │   ├── Dockerfile
+│       │   │   │   └── <font color="#3465A4"><b>latest</b></font>
+│       │   │   │       ├── Dockerfile
+│       │   │   │       └── <font color="#3465A4"><b>hooks</b></font>
+│       │   │   │           └── build
+│       │   │   ├── <font color="#3465A4"><b>kinetic</b></font>
+│       │   │   │   ├── Dockerfile
+│       │   │   │   └── <font color="#3465A4"><b>latest</b></font>
+│       │   │   │       ├── Dockerfile
+│       │   │   │       └── <font color="#3465A4"><b>hooks</b></font>
+│       │   │   │           └── build
+│       │   │   ├── <font color="#3465A4"><b>melodic</b></font>
+│       │   │   │   ├── Dockerfile
+│       │   │   │   └── <font color="#3465A4"><b>latest</b></font>
+│       │   │   │       ├── Dockerfile
+│       │   │   │       └── <font color="#3465A4"><b>hooks</b></font>
+│       │   │   │           └── build
+│       │   │   ├── <font color="#3465A4"><b>noetic</b></font>
+│       │   │   │   ├── Dockerfile
+│       │   │   │   └── <font color="#3465A4"><b>latest</b></font>
+│       │   │   │       ├── Dockerfile
+│       │   │   │       └── <font color="#3465A4"><b>hooks</b></font>
+│       │   │   │           └── build
+│       │   │   └── README.md
+│       │   ├── <font color="#3465A4"><b>eclipse-launch</b></font>
+│       │   │   ├── <font color="#75507B"><b>eclipse48.png</b></font>
+│       │   │   ├── eclipse.desktop
+│       │   │   └── eclipse-launch.sh
+│       │   ├── <font color="#4E9A06"><b>eclipse-launch.sh</b></font>
+│       │   ├── <font color="#3465A4"><b>include</b></font>
+│       │   │   └── <font color="#3465A4"><b>rtabmap_ros</b></font>
+│       │   ├── <font color="#3465A4"><b>launch</b></font>
+│       │   │   ├── <font color="#3465A4"><b>azimut3</b></font>
+│       │   │   ├── <font color="#3465A4"><b>calibration</b></font>
+│       │   │   ├── <font color="#3465A4"><b>config</b></font>
+│       │   │   ├── <font color="#3465A4"><b>data</b></font>
+│       │   │   ├── data_recorder.launch
+│       │   │   ├── <font color="#3465A4"><b>demo</b></font>
+│       │   │   ├── <font color="#3465A4"><b>jfr2018</b></font>
+│       │   │   ├── localization.launch
+│       │   │   ├── mapping.launch
+│       │   │   ├── rgbd_mapping_kinect2.launch
+│       │   │   ├── rgbd_mapping.launch
+│       │   │   ├── rtabmap.launch
+│       │   │   ├── stereo_mapping.launch
+│       │   │   └── <font color="#3465A4"><b>tests</b></font>
+│       │   ├── LICENSE
+│       │   ├── mainpage.dox
+│       │   ├── Makefile
+│       │   ├── <font color="#3465A4"><b>msg</b></font>
+│       │   ├── nodelet_plugins.xml
+│       │   ├── package.xml
+│       │   ├── <font color="#3465A4"><b>python</b></font>
+│       │   ├── README.md
+│       │   ├── rviz_plugins.xml
+│       │   ├── <font color="#3465A4"><b>scripts</b></font>
+│       │   ├── setup.py
+│       │   ├── <font color="#3465A4"><b>src</b></font>
+│       │   └── <font color="#3465A4"><b>srv</b></font>
 │       └── <font color="#3465A4"><b>teleop_twist_keyboard</b></font>
 │           ├── CHANGELOG.rst
 │           ├── CMakeLists.txt
