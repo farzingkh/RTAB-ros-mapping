@@ -68,10 +68,20 @@ This repo contains application of rtabmap_ros package to map a gazebo environmen
 
 ### Steps to launch the simulation
 
+#### Step 1 install rtabmap 
+Clone the repository and build the source code
+
+```sh
+$ git clone https://github.com/introlab/rtabmap.git
+$ cd build
+$ cmake ..
+$ make install
+```
+
 #### Step 1 clone the repository and build it
 ```sh
-$ git clone https://github.com/farzingkh/AMCL-Localization.git
-$ cd AMCL_localization/catkin_ws
+$ git clone https://github.com/farzingkh/RTAB-ros-mapping.git
+$ cd RTAB-ros-mapping/catkin_ws
 $ catkin_make
 $ source devel/setup.bash
 ```
@@ -83,7 +93,10 @@ $ roslaunch robot world.launch
 
 #### Step 4 Run the processing and command nodes
 ```sh
-$ roslaunch amcl_localization amcl.launch
+$ roslaunch rtabmap_ros mapping.launch
+```
+In another terminal run the teleop package
+```sh
 $ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 ```
 ## Output
